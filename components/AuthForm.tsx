@@ -55,7 +55,20 @@ const AuthForm = ({ type }: { type: string }) => {
     setisLoading(true);
     try {
       if (type === "sign-up") {
-        const newUser = await signUp(data);
+        const userData = {
+          email: data.email,
+          password: data.password,
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.lastName!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+        };
+        const newUser = await signUp(userData);
+        console.log(newUser);
         setuser(newUser);
       }
       if (type === "sign-in") {
@@ -99,11 +112,7 @@ const AuthForm = ({ type }: { type: string }) => {
       </header>
       {user ? (
         <div className="flex flex-col gap-4">
-          {
-            /*
-             */
-            <PlaidLink user={user} variant="primary" />
-          }
+          <PlaidLink user={user} variant="primary" />
         </div>
       ) : (
         <>
