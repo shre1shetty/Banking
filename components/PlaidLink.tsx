@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
@@ -66,6 +67,15 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             Connect Bank
           </p>
         </Button>
+      ) : variant === "home" ? (
+        <div
+          // variant={"default"}
+          onClick={() => open()}
+          className="plaidlink-default "
+        >
+          <Image src={"/icons/plus.svg"} height={20} width={20} alt="plus" />
+          <h2 className="text-14 font-semibold text-gray-600">Add Bank</h2>
+        </div>
       ) : (
         <Button onClick={() => open()} className="plaidlink-default ">
           <Image

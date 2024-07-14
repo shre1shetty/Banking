@@ -4,6 +4,7 @@ import React from "react";
 import BankCard from "./BankCard";
 import { countTransactionCategories } from "@/lib/utils";
 import Category from "./Category";
+import PlaidLink from "./PlaidLink";
 
 const RightSideBar = ({ user, transactions, banks }: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
@@ -27,10 +28,11 @@ const RightSideBar = ({ user, transactions, banks }: RightSidebarProps) => {
       <section className="banks">
         <div className="flex w-full justify-between">
           <h2 className="header-2">My Banks</h2>
-          <Link href={"/"} className="flex gap-2">
+          {/* <Link href={"/"} className="flex gap-2">
             <Image src={"/icons/plus.svg"} height={20} width={20} alt="plus" />
             <h2 className="text-14 font-semibold text-gray-600">Add Bank</h2>
-          </Link>
+          </Link> */}
+          <PlaidLink user={user} variant="home" />
         </div>
         {banks?.length > 0 && (
           <div className="relative flex flex-1 flex-col items-center justify-center gap-5">
