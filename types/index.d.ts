@@ -50,17 +50,17 @@ declare type NewUserParams = {
 };
 
 declare type Account = {
-  id?: string;
-  availableBalance?: number;
+  id: string;
+  availableBalance: number;
   currentBalance: number;
-  officialName?: string;
-  mask?: string;
+  officialName: string;
+  mask: string;
   institutionId?: string;
-  name?: string;
-  type?: string;
-  subtype?: string;
-  appwriteItemId?: string;
-  sharableId?: string;
+  name: string;
+  type: string;
+  subtype: string;
+  appwriteItemId: string;
+  sharableId: string;
 };
 
 declare type Transaction = {
@@ -83,13 +83,13 @@ declare type Transaction = {
 };
 
 declare type Bank = {
-  $id?: string;
-  accountId?: string;
-  bankId?: string;
-  accessToken?: string;
-  fundingSourceUrl?: string;
-  userId?: string;
-  sharableId?: string;
+  $id: string;
+  accountId: string;
+  bankId: string;
+  accessToken: string;
+  fundingSourceUrl: string;
+  userId: string;
+  sharableId: string;
 };
 
 declare type AccountTypes =

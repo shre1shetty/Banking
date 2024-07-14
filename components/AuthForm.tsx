@@ -68,7 +68,7 @@ const AuthForm = ({ type }: { type: string }) => {
           ssn: data.ssn!,
         };
         const newUser = await signUp(userData);
-        console.log(newUser);
+        // console.log(newUser);
         setuser(newUser);
       }
       if (type === "sign-in") {

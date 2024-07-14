@@ -12,7 +12,7 @@ export default async function RootLayout({
 }>) {
   // const loggeIn = { firstName: "Shrevan", lastName: "Shetty" };
   const loggeInUser = await getLoggedInUser();
-  console.log(loggeInUser);
+  // console.log(loggeInUser);
   if (!loggeInUser) redirect("/sign-in");
   return (
     <main className="flex h-screen w-full font-inter">
