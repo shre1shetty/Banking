@@ -1,5 +1,5 @@
 "use client";
-
+import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -76,10 +76,12 @@ const AuthForm = ({ type }: { type: string }) => {
           email: data.email,
           password: data.password,
         });
+        if (response) toast.success("Loginned Successfully");
         if (response) router.push("/");
       }
     } catch (error) {
       console.log(error);
+      toast.error(`Error:${error}`);
     } finally {
       setisLoading(false);
     }

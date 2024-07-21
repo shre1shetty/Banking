@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import toast from "react-hot-toast";
 import { Button } from "./ui/button";
 
 const Copy = ({ title }: { title: string }) => {
@@ -8,6 +8,9 @@ const Copy = ({ title }: { title: string }) => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(title);
+    toast.success("Copied Shareable Id", {
+      position: "bottom-right",
+    });
     setHasCopied(true);
 
     setTimeout(() => {
