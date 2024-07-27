@@ -22,7 +22,7 @@ const {
 export const getUserInfo = async ({ userId }: getUserInfoProps) => {
   try {
     const { database } = await createAdminClient();
-    console.log(userId);
+    // console.log(userId);
     const user = await database.listDocuments(
       DATABASE_ID!,
       USER_COLLECTION_ID!,
@@ -136,7 +136,6 @@ export const createLinkToken = async (user: User) => {
       language: "en",
       country_codes: ["US"] as CountryCode[],
     };
-
     const response = await plaidClient.linkTokenCreate(tokenParams);
     return parseStringify({
       linkToken: response.data.link_token,
